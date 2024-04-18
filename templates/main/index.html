@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}
+  Главная страница
+{% endblock %}
 
-</body>
-</html>
+{% block content %}
+  <div class="col q-flex justify-content-center">
+    <div class="card" style="width: 40rem;">
+      <div class="card-header">
+        <h3>Введите данные</h3>
+      </div>
+      <div class="card-body">
+        <form method="GET" action="/greeting/">
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Введите имя" aria-label="Username" name="name">
+            <input type="text" class="form-control" placeholder="Введите сообщение" aria-label="Username" name="message">  
+          </div>
+          <button type="submit" class="btn btn-primary">Покажи приветствие</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
